@@ -26,5 +26,5 @@ gulp.task('images', () => {
       ]
     })))
     .pipe(gulp.dest('./build/images'))
-    .pipe(gulp.dest('./public/images'))
+    .pipe(gulp.dest('./colorglob/images'))
 })
