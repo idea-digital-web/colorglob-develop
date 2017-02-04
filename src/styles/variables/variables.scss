@@ -62,3 +62,28 @@ $height-navbar: 100px;
     text-decoration: none;
   }
 }
+
+// Devices
+$mobile-s: 320em; // xs
+$mobile-m: 375em; // sm
+$mobile-l: 425em; // mm
+$tablet: 768em; // md
+$laptop: 1024em; // lg
+$laptop-l: 1440em; // xl
+$xxl-4k: 2560em; // 4x
+$em: 16;
+
+// Breakpoints
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-landscape: landscape;
+
+// Images Articles & Projects
+$w: 373px;
+$h: 268px;
+$ratio: ($w / $h);
+$width: 100px;
+$height: ($width / $ratio);
+$multip: 3;

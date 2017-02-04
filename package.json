@@ -27,8 +27,6 @@
   "homepage": "https://github.com/alexballera/react-practica#readme",
   "dependencies": {
     "babel-eslint": "^7.1.1",
-    "bootstrap": "^4.0.0-alpha.6",
-    "jquery": "^3.1.1",
     "standard": "^8.6.0"
   },
   "devDependencies": {
@@ -38,7 +36,6 @@
     "browserify": "^14.0.0",
     "del": "^2.2.2",
     "eslint": "^3.14.1",
-    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cache": "^0.4.5",

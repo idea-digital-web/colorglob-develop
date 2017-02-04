@@ -1,0 +1,27 @@
+.footer-widgets {
+  &.col-4 {
+    @include respond-to(lg) {
+      justify-content: space-between;
+    }
+    display: flex;
+    flex: 100%;
+    flex-flow: row wrap;
+    max-width: 100%;
+
+    .block {
+      &.footer-widget-1,
+      &.footer-widget-2,
+      &.footer-widget-3,
+      &.footer-widget-4 {
+        @include respond-to(md) {
+          width: 50%;
+        }
+        @include respond-to(lg) {
+          width: 20%;
+        }
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+}
