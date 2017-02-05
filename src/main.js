@@ -1,8 +1,8 @@
 import './js/vendors/modernizr.js'
 import './js/vendors/selectivizr.js'
 import './js/vendors/jquery.tipsy.js'
+import './js/vendors/jquery.flexslider.js'
 import customTipsy from './js/lib/customTipsy'
-import flexslider from './js/vendors/jquery.flexslider.js'
 import flexsliderPrincipal from './js/lib/flexsliderPrincipal'
 // import addFlexsliderProducts from './js/lib/addFlexsliderProducts'
 // import flexsliderProducts from './js/lib/flexsliderProducts'
@@ -24,7 +24,6 @@ import singleProduct from './js/lib/singleProduct'
     menuDropdown()
     addBorderBottom()
     customTipsy()
-    flexslider()
     flexsliderPrincipal()
     // addFlexsliderProducts()
     // flexsliderProducts()
