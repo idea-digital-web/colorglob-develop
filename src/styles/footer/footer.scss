@@ -4,7 +4,33 @@
  *-----------------------------------------------------------------------------------------
  */
 
-.site-footer{
+.site-footer {
+
+	.footer-widgets {
+		@include respond-to(lg) {
+			justify-content: space-around;
+		}
+		display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+		.block {
+			&.footer-widget-1,
+			&.footer-widget-2,
+			&.footer-widget-3,
+			&.footer-widget-4 {
+				padding-left: 1rem;
+				@include respond-to(md) {
+					width: 50%;
+				}
+				@include respond-to(lg) {
+					width: 20%;
+				}
+				margin: 0;
+				width: 100%;
+			}
+		}
+	}
 	&__container{
 		display: flex;
 		box-sizing: border-box;
