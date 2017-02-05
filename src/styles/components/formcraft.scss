@@ -1,0 +1,44 @@
+/**
+ *-----------------------------------------------------------------------------------------
+ * Custom FROMCRAFT
+ *-----------------------------------------------------------------------------------------
+ */
+
+html .formcraft-css .powered-by{
+	display: none;
+}
+i.no-icon{
+	display: none;
+}
+.form-element-html .submit-button{
+	background-color: $callto-action-color !important;
+	>span.text{
+		color: $white;
+		// text-shadow: 3px 3px 1px $white !important;
+		font-size: 1.2rem;
+	}
+	&:hover{
+		background-color: $callto-action-color-hover !important;
+	}
+}
+/**
+ * Form Footer
+  * Agregar el ID del fc-form- correspondiente
+ */
+footer .formcraft-css .fc-form{
+	&.fc-form-1{
+		height: 350px !important;
+		width: 85% !important;
+		margin: 0 auto;
+	}
+	& .form-element {
+		>.form-element-html{
+			padding: 0;
+			padding-right: 1rem;
+			margin-bottom: 0.5rem !important;
+		}
+		// &.form-element-type-reCaptcha{
+		// 	height: 65px;
+		// }
+	}
+}

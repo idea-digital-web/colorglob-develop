@@ -6,8 +6,8 @@ gulp.task('copy', () => {
     .pipe(gulp.dest('./colorglob/fonts'))
   // gulp.src(['./src/styles/vendors/**'])
   //   .pipe(gulp.dest('./colorglob/styles/vendors'))
-  // gulp.src(['./src/js/vendors/**'])
-  //   .pipe(gulp.dest('./colorglob/js/vendors'))
+  gulp.src(['./src/js/vendors/**'])
+     .pipe(gulp.dest('./colorglob/js/vendors'))
   gulp.src([
     './src/*.txt',
     './src/sitemap.*',

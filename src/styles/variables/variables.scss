@@ -1,3 +1,6 @@
+$base-font: 'Asap', "Source Sans Pro", 'FontAwesome', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$header-font: $base-font;
+
 // Colores
 $color-principal: #233b63;
 $color-principal-rgb: rgb(35, 59, 99);
@@ -8,7 +11,13 @@ $color-hover: #bfbfbf;
 
 $white: #fff;
 $grey: #808080;
-$orange: #ffa500;
+$black: #000000;
+$black-ligth: #1E1E1E;
+$green: #379712;
+$orange: #f7951d;
+$gray: #96A0A7;
+$blue: #6ccdeb;
+$red: #ef676f;
 
 $background-color: #e5e4e0;
 $background-color-rgb: rgb(229, 228, 224);
@@ -16,6 +25,39 @@ $background-color-hover: #416093;
 $background-color-hover-rgb: rgb(65, 96, 147);
 $background-color-transparent: rgba(5, 5, 5, .6);
 $background-color-transparent-ligth: rgba(5, 5, 5, .2);
+
+$color-theme: $orange;
+$secondary-color-theme: $orange;
+$third-theme-color: $blue;
+$color-theme-hover: #282626;
+$body-background: #ffffff;
+$color-body: #43454b;
+$color-links: #2c2d33;
+$color-border: rgba(0,0,0,0.05);
+$color-font-dark: #000000;
+
+$price-color: #008000;
+$price-color-hover: #126612;
+
+$callto-action-color: $price-color;
+$callto-action-color-hover: $price-color-hover;
+
+$offer-color: $price-color;
+$offer-color-hover: $price-color-hover;
+$footer-background-color: $blue;
+$footer-bottom-bar-background-color: $red;
+
+$error: 	#e2401c;
+$success: #0f834d;
+$info: #3D9CD2;
+$border-search-color: #ececec;
+$background-shadow: #cae9ff;
+$background-color-nav: $third-theme-color;
+
+$facebook-color: #3B5998;
+$twitter-color: #55ACEE;
+$google-color: #DC4E41;
+$linkedin-color: #0177B5;
 
 $height-navbar: 100px;
 

@@ -5,6 +5,7 @@ gulp.task('watch', () => {
   gulp.watch('./src/videos/**/*.*', ['images'])
   gulp.watch('./src/**/*.php', ['php'])
   gulp.watch([
-    './src/main.js'
+    './src/main.js',
+    './src/js/lib/**/*.js'
   ], ['scripts'])
 })

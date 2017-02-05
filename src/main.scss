@@ -7,6 +7,9 @@
 
 @import './styles/variables/**';
 @import './styles/mixins/**';
-@import './styles/base/base';
+@import './styles/base/**';
 @import './styles/vendors/**';
+@import './styles/components/**';
+@import './styles/header/**';
+@import './styles/content/**';
 @import './styles/footer/**';

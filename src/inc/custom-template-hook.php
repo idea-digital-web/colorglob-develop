@@ -28,12 +28,9 @@ add_action( 'after_head', 'add_browsehappy', 10 );
  * @see  storefront_secondary_navigation()
  * @see  storefront_site_branding()
  * @see  storefront_primary_navigation()
- * @see  storefront_product_search()
- * @see  storefront_header_cart()
+  * @see  storefront_product_search() ~> woocommerce
+ * @see  storefront_header_cart()~> woocommerce
  */
-// storefront_product_search() ~> woocommerce
-// storefront_header_cart()~> woocommerce
-
 	remove_action( 'storefront_header', 'storefront_product_search', 40 );
 	remove_action( 'storefront_header', 'storefront_header_cart', 60);
 	remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );

@@ -1,0 +1,607 @@
+@charset "UTF-8";
+/**
+ * Main Naivgation
+ */
+
+/**
+ * General Menu Styles
+ */
+.secondary-navigation {
+	display: none;
+}
+
+button.menu-toggle {
+	cursor: pointer;
+	text-align: left;
+	float: right;
+	position: relative;
+	border: 2px solid transparent;
+	box-shadow: none;
+	border-radius: 2px;
+	background-image: none;
+	padding: .618em .857em .618em 2.618em;
+	font-size: .857em;
+
+	&:hover {
+		background-image: none;
+	}
+
+	span:before {
+		@include transition(all,ease,.2s);
+	}
+
+	&:before,
+	&:after,
+	span:before {
+		content: "";
+		display: block;
+		height: 2px;
+		width: 14px;
+		position: absolute;
+		top: 50%;
+		left: 1em;
+		margin-top: -1px;
+		@include transition(all,ease,.2s);
+		border-radius: 3px;
+	}
+
+	&:before {
+		@include transform(translateY(-4px));
+	}
+
+	&:after {
+		@include transform(translateY(4px));
+	}
+}
+
+.toggled {
+	button.menu-toggle {
+		&:before,
+		&:after {
+			@include transform(translateY(0));
+			@include transform(rotate(45deg));
+		}
+
+		&:after {
+			@include transform(rotate(-45deg));
+		}
+
+		span:before {
+			opacity: 0;
+		}
+	}
+}
+
+.primary-navigation {
+	display: none;
+}
+
+.main-navigation {
+	@include clearfix;
+	width: 175%;
+	margin-right: 0 !important;
+
+	.menu {
+		clear: both;
+	}
+}
+
+.handheld-navigation,
+.nav-menu,
+.main-navigation div.menu > ul:not(.nav-menu) {
+	overflow: hidden;
+	max-height: 0; /* We have to use max-height because `height` isn't animatable */
+	@include transition(all,ease,.8s);
+}
+
+.handheld-navigation {
+	clear: both;
+
+	ul {
+		margin: 0;
+		li{
+			text-align: left;
+			padding-left: 1rem;
+			a{
+				color: $black !important;
+				&:hover{
+					color: $color-theme-hover !important;
+				}
+			}
+		}
+	}
+}
+
+.main-navigation.toggled {
+	.handheld-navigation,
+	.menu > ul:not(.nav-menu),
+	ul[aria-expanded=true] {
+		max-height: 1750px;
+	}
+}
+
+.main-navigation ul,
+.secondary-navigation ul {
+	margin-left: 0;
+	list-style: none;
+	margin-bottom: 0;
+
+	ul {
+		display: block;
+		// margin-left: 1.387em;
+	}
+
+	li {
+		a {
+			padding: .857em 0;
+			display: block;
+			color: $white;
+
+			&:before {
+				@include fa-icon();
+				content: "\f0f6";
+				margin-right: .53em;
+			}
+
+			&:hover {
+				color: #e6e6e6;
+			}
+		}
+	}
+}
+
+@include susy-media($desktop) {
+	.menu-toggle,
+	.handheld-navigation,
+	.main-navigation.toggled .handheld-navigation,
+	.main-navigation.toggled div.menu {
+		display: none;
+	}
+
+	.primary-navigation {
+		display: block;
+	}
+
+	.main-navigation,
+	.secondary-navigation {
+		clear: both;
+		display: block;
+		width: 100%;
+
+		// first level
+		ul {
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+			display: block;
+
+			li {
+				position: relative;
+				display: inline-block;
+				text-align: left;
+
+				a {
+					display: block;
+					@include transition(all,ease,.3s);
+
+					&:before {
+						display: none;
+					}
+				}
+
+				// link hover
+				&:hover,
+				&.focus {
+					> ul {
+						left: 0;
+						display: block;
+
+						li {
+							> ul {
+								display: none; // display: none; is required to make dropdowns work on touch devices
+							}
+
+							&:hover,
+							&.focus {
+								> ul {
+									left: 100%;
+									top: 0;
+									display: block;
+								}
+							}
+						}
+					}
+				}
+
+			}
+
+			// second level
+			ul {
+				@include transition(all,ease,.3s);
+				float: left;
+				position: absolute;
+				top: 100%;
+				z-index: 99999;
+				display: none; // display: none; is required to make dropdowns work on touch devices
+				&.sub-menu{
+					background-color: $third-theme-color !important;
+					width: 250px;
+					>li{
+						>a{
+							padding-top: 0.5em !important;
+							padding-bottom: 0.5em !important;
+						}
+					}
+				}
+
+				li {
+					width: 100%;
+					&:hover{
+						background-color: $color-theme-hover;
+					}
+					a {
+						width: 100%;
+						color: $white;
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * Primary Navigation
+	 */
+	.storefront-primary-navigation {
+		clear: both;
+		@include clearfix;
+		background: #90cdec;
+		text-align: center;
+		&:after{ //rayita blanca entre los 2 menues en la viandita
+			content: "";
+			height: 5px;
+			width: 100%;
+			background-color: $white;
+			position: absolute;
+			top: 76px; // (60px de heigth + 16px padding bottom)
+		}
+	}
+
+	.main-navigation {
+		background-color: $third-theme-color;
+		//Efecto de rayita blanca La Viantida:
+		box-shadow: 0px -6px 0px 0px black;
+		border-top: 5px solid white;
+		padding-bottom: .75rem;
+		//Fin efecto de rayitas La Viantida:
+		ul.menu,
+		ul.nav-menu {
+			max-height: none;
+			overflow: visible;
+			box-sizing: border-box;
+			//Efecto de rayitas La Viantida:
+			border-bottom: 5px solid black;
+			//Fin efecto de rayitas La Viantida:
+			// border-top: 5px solid $color-theme;
+			// border-bottom: 5px solid transparent;
+
+			> li {
+				// The first level menu item
+				&.current-menu-item>a,
+				&.current_page_item>a{
+					color: $white;
+					font-weight: 700 !important;
+					&:hover{
+						color: $white;
+					}
+				}
+				> a {
+					padding: 1rem;
+					text-transform: uppercase;
+					box-sizing: border-box;
+					// border-top: 5px solid transparent;
+					// border-bottom: 5px solid transparent;
+					font-weight: bold !important;
+					font-size: 1rem;
+					font-style: italic;
+					color: $color_font_dark;
+					text-shadow: 3px 3px 1px $white;
+					height: 60px;
+					@include transition(all,ease,.3s);
+					@include respond-to(lg) {
+						font-size: 20px;
+					}
+
+						// height: 60px;
+						// line-height: 10px;
+						// font-size: 20px;
+						// font-weight: 700;
+						// font-style: italic;
+
+					&.current-menu-item,
+					&.current_page_item{
+						color: $white;
+						font-weight: 700 !important;
+						&:hover{
+							color: $white !important;
+						}
+					}
+
+					&:hover{
+						// color: $color-theme-hover !important;
+						// border-top: 5px solid $color-theme;
+						// border-bottom: 5px solid $color-theme;
+						background-color: $color-theme-hover;
+						text-shadow: none;
+						color: $white !important;
+						@include transition(all,ease,.3s);
+					}
+
+					&:before {
+						content: "";
+						display: block;
+						width: 2px;
+						height: 30%;
+						background-color: rgba(#000,0.5);
+						position: absolute;
+						top: 37.5%;
+						left: -3px;
+
+					}
+				}
+
+				&:first-child {
+					margin-left: -1em;
+				}
+
+				&.menu-item-has-children,
+				&.page_item_has_children {
+					&:hover {
+						&:after {
+							display: block;
+						}
+					}
+
+					> a {
+						&:after {
+							// The dropdown indicator
+							@include fa-icon();
+							content: "\f107";
+							margin-left: 0.2em;
+						}
+					}
+				}
+			}
+
+			> li:first-child a:before {
+				display: none;
+			}
+
+			ul {
+				// Dropdowns
+				margin-left: 0;
+				@include transition(all,ease,.3s);
+
+				li {
+					a {
+						padding: .857em 1.387em;
+						font-weight: 400;
+						font-size: 1.2rem;
+					}
+
+					&:last-child {
+						border-bottom: 0;
+					}
+
+					&.menu-item-has-children,
+					&.page_item_has_children {
+						> a {
+							&:after {
+								// The dropdown indicator
+								@include fa-icon();
+								content: "\f105";
+								float: right;
+								line-height: 1.618;
+							}
+						}
+					}
+				}
+
+				ul {
+					margin-left: 0;
+					box-shadow: none;
+				}
+
+				a:hover,
+				li:hover > a {
+					background-color: rgba(0,0,0,0.025);
+				}
+			}
+		}
+
+		a {
+			padding: 0 1em 2.244em;
+		}
+	}
+
+	/**
+	 * Secondary Navigation
+	 */
+	.secondary-navigation {
+		clear: none;
+		line-height: 1;
+		width: 100% !important;
+		margin: 0 auto !important;
+		background-color: $orange;
+		//Efecto de rayitas La Viantida:
+		box-shadow: 0px -6px 0px 0px black;
+		border-top: 5px solid $white;
+		padding-bottom: 16px;
+		//Fin efecto de rayitas La Viantida:
+
+		// &:after{ //rayita blanca entre los 2 menues en la viandita
+		// 	content: "";
+		// 	height: 5px;
+		// 	width: 100%;
+		// 	background-color: $white;
+		// 	position: absolute;
+		// 	top: 76px; // (60px de heigth + 16px padding bottom)
+		// }
+
+		>.menu-secundario-container{
+			// border-left: 2rem solid transparent;
+			// border-bottom: 60px solid #e6e6e6; //$background-shadow;
+			// margin-left: 10rem;
+			//Efecto de rayitas La Viantida:
+			// border-bottom: 5px solid black;
+			// height: 60px;
+			//Fin efecto de rayitas La Viantida:
+
+			>.menu {
+				// margin-right: 2rem;
+				font-size: .857em;
+				width: 100%;
+				text-align: center;
+				//Efecto de rayitas La Viantida:
+				border-bottom: 5px solid black;
+				//Fin efecto de rayitas La Viantida:
+
+				> li {
+					@include transition(all,ease,.3s);
+					&.current-menu-item>a,
+					&.current_page_item>a{
+						color: $white;
+						font-weight: 700 !important;
+						&:hover{
+							color: $color-theme-hover;
+						}
+					}
+					&:hover > a {
+						text-decoration: none;
+						background-color: $color-theme-hover;
+						text-shadow: none;
+						color: $white !important;
+						@include transition(all,ease,.3s);
+					}
+					> a {
+						position: relative;
+						color: $white;
+						text-shadow: 3px 3px 1px #966015;
+						text-transform: uppercase;
+						height: 60px;
+						line-height: 10px;
+						font-size: 20px;
+						font-weight: 700;
+						font-style: italic;
+
+
+						&:before {
+							content: "";
+							display: block;
+							width: 2px;
+							height: 30%;
+							background-color: rgba(#000,0.5);
+							position: absolute;
+							top: 37.5%;
+							left: -3px;
+						}
+					}
+
+					&.menu-item-has-children,
+					&.page_item_has_children {
+						&:hover {
+							&:after {
+								display: block;
+							}
+						}
+
+						> a {
+							&:after {
+								// The dropdown indicator
+								@include fa-icon();
+								content: "\f107";
+								margin-left: 0.2em;
+							}
+						}
+					}
+
+				}
+
+				> li:first-child a:before {
+					display: none;
+				}
+
+				ul {
+					a {
+						padding: .326em .857em;
+						background: rgba(#000,0.05);
+						color: $white;
+					}
+
+					li:first-child a {
+						padding-top: 1em;
+					}
+
+					li:last-child a {
+						padding-bottom: 1em;
+					}
+
+					ul {
+						margin-top: -.618em;
+					}
+
+					// Dropdowns
+
+					li {
+						a {
+							padding: .857em 1.387em;
+							font-weight: 400;
+							font-size: 1.2rem;
+						}
+
+						&:last-child {
+							border-bottom: 0;
+						}
+
+						&.menu-item-has-children,
+						&.page_item_has_children {
+							> a {
+								&:after {
+									// The dropdown indicator
+									@include fa-icon();
+									content: "\f105";
+									float: right;
+									line-height: 1.618;
+								}
+							}
+						}
+					}
+
+					ul {
+						margin-left: 0;
+						box-shadow: none;
+					}
+
+					a:hover,
+					li:hover > a {
+						background-color: rgba(0,0,0,0.025);
+						color: $white;
+					}
+
+
+				}
+
+				a {
+					padding: 1.387em .857em;
+					font-weight: 300;
+					color: $white;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+	}
+}

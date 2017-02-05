@@ -1,0 +1,129 @@
+/**
+ *----------------------------------------------------------------------------------------------------------------
+ * Custom TIPSY
+ * Estilos sobre el title al hacer hover sobre un enlace
+ * http://onehackoranother.com/projects/jquery/tipsy/
+  * --------------------------------------------------------------------------------------------------------------
+ */
+
+.tipsy {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 5px;
+  position: absolute;
+  z-index: 100000;
+
+  &-inner {
+    background-color: $color-principal;
+    border-radius: 3px;
+    color: $white;
+    max-width: 200px;
+    padding: 5px 8px 4px 8px;
+    text-align: center;
+  /* Uncomment for shadow */
+  /*box-shadow: 0 0 5px #000000;*/
+  }
+
+  &-arrow {
+    border: 5px dashed #000;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    width: 0;
+
+    /* Rules to colour arrows */
+    &-n {
+      border-bottom-color: $color-principal;
+    }
+
+    &-s {
+      border-top-color: $color-principal;
+    }
+
+    &-e {
+      border-left-color: $color-principal;
+    }
+
+    &-w {
+      border-right-color: $color-principal;
+    }
+  }
+
+  &-n .tipsy-arrow {
+    border-bottom-style: solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: 0;
+    left: 50%;
+    margin-left: -5px;
+    top: 0;
+  }
+
+  &-nw .tipsy-arrow {
+    border-bottom-style: solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: 0;
+    left: 10px;
+    top: 0;
+  }
+
+  &-ne .tipsy-arrow {
+    border-bottom-style: solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: 0;
+    right: 10px;
+    top: 0;
+  }
+
+  &-s .tipsy-arrow {
+    border-bottom: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-style: solid;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+  }
+
+  &-sw .tipsy-arrow {
+    border-bottom: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-style: solid;
+    bottom: 0;
+    left: 10px;
+  }
+
+  &-se .tipsy-arrow {
+    border-bottom: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-style: solid;
+    bottom: 0;
+    right: 10px;
+  }
+
+  &-e .tipsy-arrow {
+    border-bottom-color: transparent;
+    border-left-style: solid;
+    border-right: 0;
+    border-top-color: transparent;
+    margin-top: -5px;
+    right: 0;
+    top: 50%;
+  }
+
+  &-w .tipsy-arrow {
+    border-bottom-color: transparent;
+    border-left: 0;
+    border-right-style: solid;
+    border-top-color: transparent;
+    left: 0;
+    margin-top: -5px;
+    top: 50%;
+    ;
+  }
+}
+
